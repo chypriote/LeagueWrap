@@ -1,16 +1,16 @@
 LeagueWrap
 ==========
 
-Version 0.6.4
+> Version 0.7.0
 
-[![Build Status](https://travis-ci.org/LeaguePHP/leaguewrap.svg?branch=master)](https://travis-ci.org/LeaguePHP/leaguewrap)
+This is a fork of [leaguewrap](https://github.com/paquettg/leaguewrap). We decided to create the repository under LeaguePHP organization so we can continue to publish new releases and push them to Packagist since the last release of [leaguewrap](https://github.com/paquettg/leaguewrap) was in September 2015.
 
 LeagueWrap is a League of Legends API wrapper. The goal is to assist in the development of apps which depend on the Legue of Legends API in a quick and easy way. This project will help maintain a query limit for the API and a caching system, both which are still in progress. The mantra of this wrapper is to be lazy. We will only load the information you need when you need it and will do everything we can to reduce the amount of requests to the API. You'll notice, further into this README, choices that where made because of this mantra.
 
 Install
 -------
 
-This package can be found on [packagist](https://packagist.org/packages/paquettg/leaguewrap) and is best loaded using [composer](http://getcomposer.org/). We support php 5.4, 5.5 and 5.6.
+This package can be found on [Packagist](https://packagist.org/packages/league-php/leaguewrap) and is best loaded using [Composer](http://getcomposer.org/). We support php 5.5, 5.6 and 7.0.
 
 Simple Example
 --------------
