@@ -1,10 +1,10 @@
 {
-    "name": "paquettg/leaguewrap",
+    "name": "LeaguePHP/LeagueWrap",
     "type": "library",
     "description": "A wrapper for the League of Legends API.",
-    "version": "0.6.4",
+    "version": "0.7.0",
     "keywords": ["League", "legends", "wrap", "api", "facade", "proxy"],
-    "homepage": "https://github.com/paquettg/leaguewrap",
+    "homepage": "https://github.com/LeaguePHP/LeaguePHP",
     "license": "MIT",
     "authors": [
         {
@@ -19,8 +19,7 @@
     },
     "require-dev": {
         "phpunit/phpunit": "~4.8.0",
-        "mockery/mockery": "~0.9.0",
-        "satooshi/php-coveralls": "~0.6.0"
+        "mockery/mockery": "~0.9.0"
     },
     "autoload": {
         "psr-0": { 
