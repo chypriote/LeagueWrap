@@ -1,10 +1,10 @@
 {
-    "name": "LeaguePHP/LeagueWrap",
+    "name": "league-php/leaguewrap",
     "type": "library",
     "description": "A wrapper for the League of Legends API.",
     "version": "0.7.0",
     "keywords": ["League", "legends", "wrap", "api", "facade", "proxy"],
-    "homepage": "https://github.com/LeaguePHP/LeaguePHP",
+    "homepage": "https://github.com/LeaguePHP/LeagueWrap",
     "license": "MIT",
     "authors": [
         {
