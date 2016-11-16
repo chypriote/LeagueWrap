@@ -1,7 +1,7 @@
 LeagueWrap
 ==========
 
-> Version 0.7.0
+> Version 0.7.1
 
 This is a fork of [leaguewrap](https://github.com/paquettg/leaguewrap). We decided to create the repository under LeaguePHP organization so we can continue to publish new releases and push them to Packagist since the last release of [leaguewrap](https://github.com/paquettg/leaguewrap) was in September 2015.
 
@@ -130,7 +130,7 @@ use LeagueWrap\Api;
 
 $api = new Api($myKey);             // Load up the API
 $api->limit(10, 10, $myLimiter);    // Set a limit using your own limit implementation
-$api->limit(500, 600, $myLimiter); 
+$api->limit(500, 600, $myLimiter);
 ```
 
 Also note that the limit functionality fully supports the Static API described further down.
@@ -190,7 +190,7 @@ Api::setKey('my-key');                // set the key for the API
 Api::remember(60);                    // cache all request for 60 seconds
 $bakasan = Summoner::info('bakasan'); // cached for 60 seconds
 // or
-Api::remember(60, $myCache);          // cache all request using my own 
+Api::remember(60, $myCache);          // cache all request using my own
 $bakasan = Summoner::info('bakasan'); // cached for 60 seconds using $myCache
 ```
 
@@ -232,12 +232,12 @@ catch (LeagueWrap\Response\ResponseException $e)
 {
 	// All http error codes extends from this abstract class.
 	// This is a catch all (both 4xx and 5xx http errors)
-	
+
 	// To get more detailed information about the response, the following methods are available
 	$e->hasResponse(); // Checks if response was attached
 	$response = $e->getResponse(); // Instance of LeagueWrap\Response
 	// In some cases like resolving 429 status codes, information from headers could be useful
-	// see: https://developer.riotgames.com/docs/rate-limiting 
+	// see: https://developer.riotgames.com/docs/rate-limiting
 	$headers = $response->getHeaders(); // ['Retry-After' => ..., ...]
 	$response->hasHeader('Retry-After');
 	$response->getHeader('that does not exist'); // null
@@ -256,7 +256,7 @@ Quick Reference
 
 LeagueWrap implements a very strict interface for the API where everything is within your control and easy to test. Here's a sampling of the possible startup methods.
 
-Creates a new Api instance with the key. The key is mandatory and will throw a `LeagueWrap\NoKeyException` if not given. This instance will be used to orginize future calls to the API with out having to re-enter the key. 
+Creates a new Api instance with the key. The key is mandatory and will throw a `LeagueWrap\NoKeyException` if not given. This instance will be used to orginize future calls to the API with out having to re-enter the key.
 
 ```php
 $api = new \LeagueWrap\Api($myKey);
@@ -278,7 +278,7 @@ $game       = $api->game();
 $games      = $game->recent(74602);
 $mostRecent = $games->game(0);
 // instead to access
-$mostRecent = $games[0]; 
+$mostRecent = $games[0];
 
 // traversing
 foreach ($games as $game)
@@ -450,7 +450,7 @@ The game API is very simple but returns a lot of information about the given sum
 $game = $api->game();
 ```
 
-We have 2 ways of getting the information about a summoners recent games. You can either pass in the summoner id or the summoner object `LeagueWrap\Dto\Summoner` which has been loaded by a previous call to info. 
+We have 2 ways of getting the information about a summoners recent games. You can either pass in the summoner id or the summoner object `LeagueWrap\Dto\Summoner` which has been loaded by a previous call to info.
 
 ```php
 $games = $game->recent(74602);
@@ -465,7 +465,7 @@ $game = $bakasan->recentGame(0);
 Match
 ----
 
-##### **NOTE:** The MatchHistory API endpoint has been deprecated by Riot and will be removed on **September 22nd, 2015**. Please use the Matchlist endpoint instead! 
+##### **NOTE:** The MatchHistory API endpoint has been deprecated by Riot and will be removed on **September 22nd, 2015**. Please use the Matchlist endpoint instead!
 
 The Match API can be used to get a more detailed match history then the game API provides. This does only include ranked games though. You can either pass in the summoner id or a summoner object `LeagueWrap\Dto\Summoner`.
 
