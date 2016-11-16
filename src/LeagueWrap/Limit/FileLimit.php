@@ -85,7 +85,6 @@ class FileLimit implements LimitInterface
      * @param string $region
      *
      * @return $this
-     * @chainable
      */
     public function setRate($hits, $seconds, $region)
     {

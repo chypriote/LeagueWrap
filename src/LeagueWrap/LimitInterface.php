@@ -15,7 +15,6 @@ interface LimitInterface
      * @param int    $hits
      * @param int    $seconds
      * @param string $region
-     * @chainable
      */
     public function setRate($hits, $seconds, $region);
 

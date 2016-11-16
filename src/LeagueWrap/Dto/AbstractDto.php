@@ -108,7 +108,6 @@ abstract class AbstractDto
      * Returns the raw info array.
      *
      * @return array
-     * @recursive
      */
     public function raw()
     {

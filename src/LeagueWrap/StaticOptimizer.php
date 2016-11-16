@@ -36,7 +36,6 @@ class StaticOptimizer
      * @param array $fields
      *
      * @return $this
-     * @chainable
      */
     public function optimizeFields(array $fields)
     {
