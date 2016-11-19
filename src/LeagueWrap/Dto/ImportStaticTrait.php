@@ -54,7 +54,17 @@ trait ImportStaticTrait
             $fieldValue = $this->info[$field];
             $staticData = $infoArray[$fieldValue];
 
-            $this->info[$data.'StaticData'] = $staticData;
+            // Static data can contain more than one items
+            $this->info[$data.'StaticData'][] = $staticData;
+        }
+
+        // Fix for backwards compatibility (https://github.com/LeaguePHP/LeagueWrap/issues/4)
+        // StaticData fields that have only one value (like Champion) should be accessible directly like
+        // `$champion->championStaticData->name` instead of `$champion->championStaticData[0]->name`
+        foreach ($this->info as $key => $value) {
+            if (strpos($key, 'StaticData') !== false && count($value) === 1) {
+                $this->info[$key] = $this->info[$key][0];
+            }
         }
 
         parent::addStaticData($optimizer);
