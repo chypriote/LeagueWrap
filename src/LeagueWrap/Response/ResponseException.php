@@ -5,8 +5,9 @@ namespace LeagueWrap\Response;
 use Exception;
 use LeagueWrap\Exception\NoResponseIncludedException;
 use LeagueWrap\Response;
+use Serializable;
 
-abstract class ResponseException extends Exception
+abstract class ResponseException extends Exception implements Serializable
 {
     /**
      * Response that caused this exception.
@@ -59,5 +60,15 @@ abstract class ResponseException extends Exception
         }
 
         return $this->response;
+    }
+
+    public function serialize()
+    {
+        return serialize([$this->response, $this->message, $this->code, $this->line, $this->file]);
+    }
+
+    public function unserialize($data)
+    {
+        list($this->response, $this->message, $this->code, $this->line, $this->file) = unserialize($data);
     }
 }
