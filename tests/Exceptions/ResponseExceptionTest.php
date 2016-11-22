@@ -104,11 +104,17 @@ class ResponseExceptionTest extends PHPUnit_Framework_TestCase
 
     public function testSerialization()
     {
-        $exception = new Http404('Not found.', 404);
+        $exception = Http404::withResponse('Not found.', new Response('', 404, [
+            'Header' => [
+                123,
+            ],
+        ]));
         /** @var Http404 $freshException */
         $freshException = unserialize(serialize($exception));
 
         $this->assertEquals('Not found.', $freshException->getMessage());
-        $this->assertEquals(404, $freshException->getCode());
+        $this->assertTrue($freshException->hasResponse());
+        $this->assertEquals(404, $freshException->getResponse()->getCode());
+        $this->assertEquals(123, $freshException->getResponse()->getHeader('Header'));
     }
 }
