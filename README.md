@@ -1,7 +1,7 @@
 LeagueWrap
 ==========
 
-> Version 0.7.1
+> Version 0.7.2
 
 This is a fork of [leaguewrap](https://github.com/paquettg/leaguewrap). We decided to create the repository under LeaguePHP organization so we can continue to publish new releases and push them to Packagist since the last release of [leaguewrap](https://github.com/paquettg/leaguewrap) was in September 2015.
 
